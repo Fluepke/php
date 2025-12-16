@@ -149,6 +149,10 @@ ul:not(.tags) li + li {
 
 :is(dt, dd) {
 	background-color: var(--black-20);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 1em;
 	padding: 1rem 1em;
 }
 
