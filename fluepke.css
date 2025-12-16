@@ -141,10 +141,8 @@ ul {
 	padding-inline-start: 2ch;
 }
 
-dl {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	gap: 0;
+ul:not(.tags) li + li {
+	margin-top: 0.5em;
 }
 
 :is(dt, dd) {
@@ -196,7 +194,7 @@ summary:focus-visible {
 .tags {
 	font-size: 0.8em;
 	line-height: 1;
-	display: flex;
+	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 	list-style-type: none;
@@ -205,28 +203,13 @@ summary:focus-visible {
 
 .tags li {
 	background-color: var(--black-20);
+	
+}
+
+.tags :is(li:not(:has(a)), a) {
 	padding: 0.75em 1em;
 }
 
-.brackets {
-	font-size: 0.8em;
-	line-height: 1;
-	display: inline-flex;
-	flex-wrap: wrap;
-	list-style-type: none;
-	padding-inline-start: 0;
-	margin-block-start: 0.25em;
-}
-
-.brackets::before {
-	content: '(';
-}
-
-.brackets::after {
-	content: ')';
-}
-
-.brackets li:not(:last-child)::after {
-	content: ',';
-	margin-inline-end: 1ch;
+.tags a {
+	display: block;
 }
